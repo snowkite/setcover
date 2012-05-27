@@ -136,6 +136,11 @@ public:
     greedy_algo(T *a_, int n_, int k_);
 
     /**
+     * Деструктор
+     **/
+    ~greedy_algo();
+    
+    /**
      * Обнуление полей класса 
      * нужно выполнять перед обработкой следуещего числа
      **/
@@ -171,14 +176,14 @@ public:
      * минимальное покрытие
      * для результата 011100 - соответственно a[2] a[3] a[4]
      **/
-    unsigned int recur(T s, int r);
+    unsigned long recur(T s, int r);
 
     /**
      * основная функция класса для внешнего вызова
      * @return результат поиска 
      * в формате результатов recur() 
      **/
-    unsigned int invoke();
+    unsigned long invoke();
 };
 
 #include "setcover.tpp"
