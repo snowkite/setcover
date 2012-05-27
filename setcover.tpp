@@ -3,6 +3,7 @@
 
 #include "setcover.h"
 #include <bitset>
+#include <cmath>
 
 using namespace std;
 
@@ -57,6 +58,13 @@ void greedy_algo<T>::clear() {
 }
 
 template <class T>
+greedy_algo<T>::~greedy_algo() {
+    delete [] sum;
+    delete [] srt[0];
+    delete [] srt[1];
+}
+
+template <class T>
 void greedy_algo<T>::sort() {
     bitset<64> bs;
     for (int i = 0; i < k; i++) {
@@ -75,7 +83,7 @@ void greedy_algo<T>::sort() {
 }
 
 template <class T>
-unsigned int greedy_algo<T>::recur(T s, int r) {
+unsigned long greedy_algo<T>::recur(T s, int r) {
     T x = a[srt[b][r]] ^ s;
     if (x == m)
         return (unsigned int) pow((double) 2, srt[b][r]);
@@ -94,12 +102,11 @@ unsigned int greedy_algo<T>::recur(T s, int r) {
 }
 
 template <class T>
-unsigned int greedy_algo<T>::invoke() {
+unsigned long greedy_algo<T>::invoke() {
     clear();
     sort();
     return recur(0, 0);
 }
-
 
 #endif	/* NEWFILE_TPP */
 
