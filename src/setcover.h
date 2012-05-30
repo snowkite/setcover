@@ -186,6 +186,6 @@ public:
     unsigned long invoke();
 };
 
-#include "setcover.tpp"
+#include "setcover.tcc"
 
 #endif	/* SETCOVER_H */
