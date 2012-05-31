@@ -131,6 +131,7 @@ void testRecur() {
     a_[3] = bs3.to_ulong();
     int r = 0;
     greedy_algo<unsigned int> _greedy_algo(a_, n_, k_);
+    _greedy_algo.clear();
     _greedy_algo.sort();
     unsigned long result = _greedy_algo.recur(s, r);
     bitset < 4 > bs5(string("1111"));
