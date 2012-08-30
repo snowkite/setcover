@@ -72,12 +72,12 @@ void greedy_algo<T>::sort() {
         bs = a[i];
         sum[i] = bs.count();
         int j = 0;
-        while ((sum[i] < sum[srt[!b][j]]) && (j < k)) {
+        while ((sum[i] <= sum[srt[!b][j]]) && (j < i)) {
             srt[b][j] = srt[!b][j];
             j++;
         }
         srt[b][j] = i;
-        while (++j < k)
+        while (++j <= i)
             srt[b][j] = srt[!b][j - 1];
     }
 }
